@@ -10,12 +10,11 @@ const Company = () => {
     axios
       .get("https://api.spacexdata.com/v4/company")
       .then((res) => {
-        console.log("company info ==>", res.data);
         setCompanyInfo(res.data);
         return res.data;
       })
       .catch((err) => {
-        console.log("error in api pull", err);
+        console.log("error in pull request", err);
       });
   }, []);
 
@@ -23,9 +22,9 @@ const Company = () => {
     <div className="homeSection">
       <h1 className="mt-9">Welcome to the the {companyInfo.name} World</h1>
       <h2>Founded by: {companyInfo.ceo}</h2>
+      <p className="companySummary">{companyInfo.summary}</p>
       <Link to={"/rockets"}>
-        {" "}
-        <button type="button" className="mt-5 btn btn-danger">
+        <button type="button" className="mt-1 btn btn-danger">
           Browse Rockets
         </button>
       </Link>

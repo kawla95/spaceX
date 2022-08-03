@@ -7,16 +7,13 @@ const Rockets = () => {
 
   useEffect(() => {
     axios.get("https://api.spacexdata.com/v4/rockets").then((res) => {
-      //   console.log(res.data);
       setRocketData(res.data);
       return res.data;
     });
   }, []);
-  console.log("rocket data ==>", rocketData);
   return (
     <div>
       <Link to={"/"}>
-        {" "}
         <button type="button" className="btn btn-danger m-3">
           Back to Homepage
         </button>
@@ -35,7 +32,6 @@ const Rockets = () => {
                   {rocket.name}
                 </h5>
                 <p className="card-text" style={{ color: "black" }}>
-                  {" "}
                   {rocket.description}
                 </p>
                 <a

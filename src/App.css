@@ -20,3 +20,10 @@ body {
 .rocketSection .card {
   margin: 1rem;
 }
+
+.companySummary {
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  margin: 3rem;
+}
